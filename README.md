@@ -1,3 +1,4 @@
+
 Q1 : Spring Container vs Spring Context vs IOC Container vs Application Context
 Spring Container : Manage Spring Beans & their lifecycle :
 1. Bean Factory : Basic Spring Container
@@ -29,3 +30,4 @@ Q4 : What if multiple matching beans are available ?
 Use @Primary & @Qualifier
 
 Q5 : Spring is managing objects and performing autro-wiring
+
