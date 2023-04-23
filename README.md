@@ -1,16 +1,31 @@
-# spring-context-launcher
+Q1 : Spring Container vs Spring Context vs IOC Container vs Application Context
+Spring Container : Manage Spring Beans & their lifecycle :
+1. Bean Factory : Basic Spring Container
+2. Application Context : Advanced Spring Container with entreprise-specific features
 
-This repository contains a sample project that demonstrates how to launch and configure a Spring context with beans programmatically.
+     [ x ] Easy to use in web applications
+     [ x ]Easy internationalization
+     [ x ]Easy intergration with Spring AOP
 
-Features:
+            Which one to use ? : Most Entreprise applications use Application Context
+               * Recomended for Web Applications, web services , Rest API and microservices
+Q2 : Java Bean vs Spring Bean : 
 
+**_NB : Any Java object is a POJO_**
+  * Java Bean is a class that 1 . Have an public no-args contructor
+2 . Have Getter & Sette
+3 . Implements Serializable
+  * POJO : Plain old java object
+1 . No Constraints
+2 . Any java objects is a POJO
+  * Spring Bean : Any Java Object that is managed by spring
+1 . Spring uses IOC container (Bean Factory or Application Context) to manage objects
 
-    1 . Provides a simple way to launch a Spring context using the SpringApplication class from the Spring Boot framework.
+Q3 : How Can I list all beans managed by spring Framework
+// List of all Spring Beans
+Arrays.stream( context.getBeanDefinitionNames()).forEach(System.out::println);
 
-    2 . Shows how to define beans programmatically using the @Configuration and @Bean annotations.
+Q4 : What if multiple matching beans are available ?
+Use @Primary & @Qualifier
 
-    3 . Demonstrates how to configure beans using the @Value annotation to inject properties from an external properties file.
-
-    4 . Includes examples of how to use profiles to configure different sets of beans for different environments (e.g., development vs production).
-
-    5 . Provides sample code for running tests against the Spring context, using the Spring Test framework.
+Q5 : Spring is managing objects and performing autro-wiring
